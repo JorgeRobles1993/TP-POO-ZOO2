@@ -1,6 +1,6 @@
 <?php
 
-class Acuarium extends Enclos {
+class Aquarium extends Enclos {
 
     
 }
