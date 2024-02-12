@@ -1,5 +1,15 @@
 <?php 
 include './partials/header.php';
+include './config/autoloader.php';
+
+
+$animal1 = new Aigles("un animal", 150, 62, 2, 2);
+$animal2 = new Ours("toto", 150, 62, 2);
+$animal3 = new Aigles("Oiseau", 150, 62, 2, 8);
+
+echo "Animal 1 = " . $animal1->getType() . "<br/>";
+echo "Animal 2 = " . $animal2->getType() . "<br/>";
+echo "Animal 3 = " . $animal3->getType() . "<br/>";
 
 ?>
 
@@ -9,3 +19,7 @@ include './partials/header.php';
     </div>
 </div>
 
+
+<?php 
+include './partials/footer.php';
+?>

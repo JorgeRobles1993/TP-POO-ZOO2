@@ -7,5 +7,13 @@ class Employee{
     protected $_gender = "Male";
 
 
+    public function canMoveAnimal(Animal $animalToMove, Enclos $destinationEnclos) : bool
+    {
+        /*
+            tester le type d'animal
+            et vérifier que l'enclos est compatible
+        */
+    }
+
 }
     ?>

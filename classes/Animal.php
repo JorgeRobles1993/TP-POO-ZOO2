@@ -1,7 +1,7 @@
 <?php
 
 
-class Animal 
+abstract class Animal 
 {
     protected $_id;
     protected string $_namespecies;
@@ -9,7 +9,20 @@ class Animal
     protected int $_size;
     protected int $_age;
     protected int $_health;
-    protected bool $_isSleeping = false; 
+       protected bool $_isSleeping = false;  
+       protected string $type;
+
+
+    // constructeur
+    public function __construct($_namespecies, $_weight, $_size, $_age)
+    {
+        $this->_namespecies = $_namespecies;
+        $this->_weight = $_weight;
+        $this->_size = $_size;
+        $this->_age = $_age;
+        $this->type = "INCONNU";
+    }
+    
 
     // METHODE
 
@@ -18,7 +31,6 @@ class Animal
      {
           echo "L'animal mange";
      }
-
     // GETTER & SETTER
 
    public function getId()
@@ -71,6 +83,16 @@ class Animal
           $this->_age = $age;
    }
 
+   public function getType()
+   {
+        return $this->type;
+   }
+
+   public function setType($type)
+   {
+          $this->type = $type;
+   }
+
    public function getSoin()
    {
           return $this->_health;
@@ -85,9 +107,11 @@ class Animal
    {
           return $this->_isSleeping;
    }
-
  
 
-   
 
+   public function sound()
+   {
+       echo "Fais du bruit";
+   }
 }

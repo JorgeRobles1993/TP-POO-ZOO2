@@ -2,13 +2,18 @@
 
 class Aigles extends Animal
 {
-
-    public function __construct($_namespecies, $_weight, $_size, $_age)
+    protected int $nombreAile;
+    public function __construct($_namespecies, $_weight, $_size, $_age, $nombreAile)
     {
-           $this->_namespecies = $_namespecies;
-           $this->_weight = $_weight;
-           $this->_size = $_size;
-           $this->_age = $_age;
+        parent::__construct($_namespecies, $_weight, $_size, $_age);
+
+        $this->nombreAile=$nombreAile;
+        $this->type = "AERIEN";
     }
     
+    public function sound()
+    {
+        parent::sound();
+        echo "Grogneeeee";
+    }
 }

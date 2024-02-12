@@ -18,6 +18,8 @@ class Enclos{
         $this->_animals = $animals;
 
     }
+
+    
     
     public function clean()
     {
