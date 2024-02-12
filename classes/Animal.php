@@ -8,7 +8,6 @@ class Animal
     protected int $_weight;
     protected int $_size;
     protected int $_age;
-    protected string $_sound;
     protected int $_health;
     protected bool $_isSleeping = false; 
 
@@ -72,24 +71,14 @@ class Animal
           $this->_age = $age;
    }
 
-   public function getSound()
-   {
-          return $this->_sound;
-   }
-
-   public function setSound($sound)
-   {
-          $this->_sound = $sound;
-   }
-
    public function getSoin()
    {
-          return $this->_soin;
+          return $this->_health;
    }
 
    public function setSoin($soin)
    {
-          $this->_soin = $soin
+          $this->_health = $soin;
    }
 
    public function getIssleeping()
