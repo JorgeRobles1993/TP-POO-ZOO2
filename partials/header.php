@@ -11,7 +11,7 @@
 <body class="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-800 h-screen" onload="loader()">
     
     <header>
-     <!-- El super navbar del Jorge -->
+     <!-- jorge's navbar-->
      <nav class="bg-white border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex justify-between mx-auto">
     <a href="./index.php"><img src="../images/monkeygifnavbar.gif" class="h-12"/></a>
