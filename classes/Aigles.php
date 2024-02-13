@@ -17,4 +17,10 @@ class Aigles extends Animal
         parent::sound();
         echo "Grogneeeee";
     }
+
+    public function getInfos()
+    {
+        return parent::getInfos() . 
+                "nombre aile = " . $this->nombreAile . "<br/>";
+    }
 }

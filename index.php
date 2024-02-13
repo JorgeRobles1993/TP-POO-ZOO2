@@ -1,28 +1,35 @@
 <?php 
 include './partials/header.php';
 include './config/autoloader.php';
+/*
+  A FAIRE : 
+  - le type de Animal et le type de Enclos doit être identique pour qu'on puisse les comparer (AQUATIQUE // aquatiques)
+  - dans Animal, ajouter une propriété Species (Espèce) qui indiquera Aigle pour la classe Aigle, Ours pour ours etc.
+  - supprimer numberOfAnimals dans la classe Enclos (voir les commentaires)
+  - faire les function Enclos->getIsEmpty(), Enclos->getIsFull(), Enclos->getIsAvailable()
+  - ecrire le code de Zoo->getCompatibleEnclos
+  - dans enclos, supprimer numberOfAnimals car on connait le nombre d'animaux de l'enclos avec le nombre de ligne dans le tableau $_animals
+  - dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
+ 
+*/
 
+
+/*
+$Zoo1 = new Zoo();
+
+$Zoo1->Employee->MoveAnimalEnclos();
+$Zoo1->Employee->NettoyerEnclos();
+*/
 $animal1 = new Poissons("Magikarp", 150, 30, 1, 2);
 $animal2 = new Ours("Ted", 150, 210, 5);
 $animal3 = new Aigles("Oiseau", 150, 80, 2, 8);
 $animal4 = new Tigre("Tigre du bengale", 200, 110, 4);
 
-echo "Animal 1 = " . $animal1->getType() . "<br/>";
-echo "Animal 2 = " . $animal2->getType() . "<br/>";
-echo "Animal 3 = " . $animal3->getType() . "<br/>";
-echo "Animal 4 = " . $animal4->getType() . "<br/>";
+echo "Animal 1 info = <br/>" . $animal1->getInfos() . "<br/>";
+echo "Animal 2 info = <br/>" . $animal2->getInfos() . "<br/>";
+echo "Animal 3 info = <br/>" . $animal3->getInfos() . "<br/>";
+echo "Animal 4 info = <br/>" . $animal4->getInfos() . "<br/>";
 
-echo "Animal 1 = " . $animal1->getName() . "<br/>";
-echo "Animal 2 = " . $animal2->getName() . "<br/>";
-echo "Animal 3 = " . $animal3->getName() . "<br/>";
-
-echo "Animal 1 = " . $animal1->getSize() . "<br/>";
-echo "Animal 2 = " . $animal2->getSize() . "<br/>";
-echo "Animal 3 = " . $animal3->getSize() . "<br/>";
-
-echo "Animal 1 = " . $animal1->getAge() . "<br/>";
-echo "Animal 2 = " . $animal2->getAge() . "<br/>";
-echo "Animal 3 = " . $animal3->getAge() . "<br/>";
 
 $enclos = [];
 $enclos1 = new Cages(1, "cage de tigres", "terrestre", "propre", 6, "tigre");
@@ -63,7 +70,7 @@ foreach ($enclos as $enclo) {
   
   <p><?=  $enclo->getId() ?></p>
   <p><?=  $enclo->getName() ?></p>
-  <p><?=  $enclo->getType() ?></p>
+  <p>Type = <?=  $enclo->getType() ?></p>
   <p><?=  $enclo->getStatus() ?></p>
 
   <?php 

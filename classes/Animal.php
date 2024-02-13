@@ -108,6 +108,13 @@ abstract class Animal
           return $this->_isSleeping;
    }
  
+   public function getInfos()
+   {
+       return "Type = " . $this->getType() . "<br/>" .
+              "Name = " . $this->getName() . "<br/>" . 
+              "Size = " . $this->getSize() . "<br/>" .
+              "Age = " . $this->getAge() . "<br/>" ;
+   }
 
 
    public function sound()
