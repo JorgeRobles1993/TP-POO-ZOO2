@@ -23,15 +23,64 @@ class Enclos{
     {
         echo "Je suis nettoyé";
     }
+        
+    public function getId()
+    {
+       return $this->_id;
+    }
+
+    public function setId($id)
+    {
+       return $this->_id = $id;
+    }
+
+    public function getName()
+    {
+       return $this->_name;
+    }
+
+    public function setName($name)
+    {
+       return $this->_name = $name;
+    }
 
     public function getType()
     {
-        return $this->_type;
+       return $this->_type;
     }
 
     public function setType($type)
     {
-        $this->_type = $type;
+       return $this->_type = $type;
     }
-  
+    public function getStatus()
+    {
+       return $this->_status;
+    }
+
+    public function setStatus($status)
+    {
+       return $this->_status = $status;
+    }
+
+    public function getNumberofAnimals()
+    {
+       return $this->_numberofanimals;
+    }
+
+    public function setNumberofAnimals($numberofanimals)
+    {
+       return $this->_numberofanimals = $numberofanimals;
+    }
+
+    public function getAnimals()
+    {
+       return $this->_animals;
+    }
+
+    public function setAnimals($animals)
+    {
+       return $this->_animals = $animals;
+    }
+
 }
