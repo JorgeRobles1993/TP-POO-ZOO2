@@ -9,16 +9,7 @@ class Zoo
 
     public function AddEnclos(Enclos $_enclos)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
-        
-        
->>>>>>> master
-=======
 
->>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
     }
 
 
