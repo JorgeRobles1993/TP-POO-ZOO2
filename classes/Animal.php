@@ -108,6 +108,7 @@ abstract class Animal
           return $this->_isSleeping;
    }
  
+   //  renvoie une chaine de texte avec les informations communes des animaux
    public function getInfos()
    {
        return "Type = " . $this->getType() . "<br/>" .

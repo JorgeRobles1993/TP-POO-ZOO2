@@ -18,6 +18,8 @@ class Aigles extends Animal
         echo "Grogneeeee";
     }
 
+    //  spécifique à la classe Aigles, on reprend les infos communes du parent et on ajoute la propriété spécifique des aigles
+    //      on ne mets pas le getInfo dans Ours, Poisson ou Tigre car il n'y a pas de propriété spécifique dans ces classes
     public function getInfos()
     {
         return parent::getInfos() . 

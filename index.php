@@ -10,7 +10,8 @@ include './config/autoloader.php';
   - ecrire le code de Zoo->getCompatibleEnclos
   - dans enclos, supprimer numberOfAnimals car on connait le nombre d'animaux de l'enclos avec le nombre de ligne dans le tableau $_animals
   - dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
- 
+  - faire un getInfos pour les enclos (comme pour la classe animal)
+  - tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
 */
 
 
