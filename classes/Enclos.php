@@ -7,7 +7,7 @@ class Enclos{
     protected $_status; // (mauvaise, correcte, bonne)
     protected $_numberofanimals;
     protected $_animals = [];
-
+  
     public function __construct($id, $name, $type ,$status, $numberofanimals, $animals)
     {
         $this->_id = $id;

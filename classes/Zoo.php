@@ -17,7 +17,7 @@ class Zoo
     public function getCompatibleEnclos(Animal $animal, Enclos $enclos)
     { 
         // créer un tableau vide d'enclos ($enclosCompatibles)
-        $_enclos = [];
+      
 
         //  boucle sur la liste des enclos 
 
