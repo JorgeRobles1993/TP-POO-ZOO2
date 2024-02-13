@@ -19,33 +19,19 @@ class Enclos{
 
     }
 
-    
-    
     public function clean()
     {
         echo "Je suis nettoyé";
     }
 
-    // public function getId()
-    // {
-    //     return $this->$id;
-    // }
+    public function getType()
+    {
+        return $this->_type;
+    }
 
-
-    // public function clean()
-    // {
-    //     echo "Je suis nettoyé";
-    // }
-
-
-    // public function clean()
-    // {
-    //     echo "Je suis nettoyé";
-    // }
-
-
-    // public function clean()
-    // {
-    //     echo "Je suis nettoyé";
-    // }
+    public function setType($type)
+    {
+        $this->_type = $type;
+    }
+  
 }

@@ -3,14 +3,14 @@
 
 abstract class Animal 
 {
-    protected $_id;
-    protected string $_namespecies;
-    protected int $_weight;
-    protected int $_size;
-    protected int $_age;
-    protected int $_health;
+       protected $_id;
+       protected string $_namespecies;
+       protected int $_weight;
+       protected int $_size;
+       protected int $_age;
+       protected int $_health;
        protected bool $_isSleeping = false;  
-       protected string $type;
+       protected string $_type;
 
 
     // constructeur
@@ -20,7 +20,7 @@ abstract class Animal
         $this->_weight = $_weight;
         $this->_size = $_size;
         $this->_age = $_age;
-        $this->type = "INCONNU";
+        $this->_type = "INCONNU";
     }
     
 
@@ -85,12 +85,12 @@ abstract class Animal
 
    public function getType()
    {
-        return $this->type;
+        return $this->_type;
    }
 
    public function setType($type)
    {
-          $this->type = $type;
+          $this->_type = $type;
    }
 
    public function getSoin()

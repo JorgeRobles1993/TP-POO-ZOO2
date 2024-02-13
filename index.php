@@ -3,7 +3,7 @@ include './partials/header.php';
 include './config/autoloader.php';
 
 
-$animal1 = new Aigles("un animal", 150, 62, 2, 2);
+$animal1 = new Poissons("un animal", 150, 62, 2, 2);
 $animal2 = new Ours("toto", 150, 62, 2);
 $animal3 = new Aigles("Oiseau", 150, 62, 2, 8);
 
