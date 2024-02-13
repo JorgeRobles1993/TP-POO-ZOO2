@@ -23,17 +23,38 @@ class Enclos{
     {
         echo "Je suis nettoyé";
     }
+        
+    public function getId()
+    {
+       return $this->_id;
+    }
+
+    public function setId($id)
+    {
+       return $this->_id = $id;
+    }
+
+    public function getName()
+    {
+       return $this->_name;
+    }
+
+    public function setName($name)
+    {
+       return $this->_name = $name;
+    }
 
 <<<<<<< HEAD
     public function getType()
     {
-        return $this->_type;
+       return $this->_type;
     }
 
     public function setType($type)
     {
-        $this->_type = $type;
+       return $this->_type = $type;
     }
+<<<<<<< HEAD
   
 =======
         
@@ -66,6 +87,8 @@ class Enclos{
     {
        return $this->_type = $type;
     }
+=======
+>>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
     public function getStatus()
     {
        return $this->_status;
@@ -96,5 +119,8 @@ class Enclos{
        return $this->_animals = $animals;
     }
 
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
 }

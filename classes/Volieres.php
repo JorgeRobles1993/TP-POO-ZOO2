@@ -2,10 +2,13 @@
 class Volieres extends Enclos {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 }
 =======
+=======
+>>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
     protected int $_hauteur;
 
     public function __construct($_id, $_name, $_type, $_status, $_numberofanimals, $_animals, $hauteur)
@@ -28,4 +31,7 @@ class Volieres extends Enclos {
     }
 
 }
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
