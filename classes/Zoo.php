@@ -9,23 +9,20 @@ class Zoo
 
     public function AddEnclos(Enclos $_enclos)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
-        
-        
->>>>>>> master
-=======
 
->>>>>>> 7069b2350b1ac67563b4b58112fe46fbc683907c
     }
+
 
 
     public function getCompatibleEnclos(Animal $animal, Enclos $enclos)
     { 
         // créer un tableau vide d'enclos ($enclosCompatibles)
+        $_enclos = [];
+
         //  boucle sur la liste des enclos 
+
+        
+
         //      teste si le type de l'enclos correspond au type de l'animal (paramètre)
         //      si oui, l'enclos est compatible
         //              test si l'enclos n'est pas plein
