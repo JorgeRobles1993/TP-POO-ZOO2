@@ -16,13 +16,6 @@ echo "Animal 1 = " . $animal1->getName() . "<br/>";
 echo "Animal 2 = " . $animal2->getName() . "<br/>";
 echo "Animal 3 = " . $animal3->getName() . "<br/>";
 
-
-
-
-
-$enclos = [];
-
-
 echo "Animal 1 = " . $animal1->getSize() . "<br/>";
 echo "Animal 2 = " . $animal2->getSize() . "<br/>";
 echo "Animal 3 = " . $animal3->getSize() . "<br/>";
@@ -31,7 +24,7 @@ echo "Animal 1 = " . $animal1->getAge() . "<br/>";
 echo "Animal 2 = " . $animal2->getAge() . "<br/>";
 echo "Animal 3 = " . $animal3->getAge() . "<br/>";
 
-
+$enclos = [];
 $enclos1 = new Cages(1, "cage de tigres", "terrestre", "propre", 6, "tigre");
 $enclos2 = new Aquarium(2, "Aquarium des poissons", "aquatiques", "bonne", 5, "poissons", 10);
 $enclos3 = new Volieres(3, "Voliere des aigles", "aeriennes", "sale", 4, "aigles", 100);
