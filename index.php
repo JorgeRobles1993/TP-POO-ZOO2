@@ -3,6 +3,7 @@ include './partials/header.php';
 include './config/autoloader.php';
 
 
+
 $animal1 = new Poissons("Magikarp", 150, 30, 1, 2);
 $animal2 = new Ours("Ted", 150, 210, 5);
 $animal3 = new Aigles("Oiseau", 150, 80, 2, 8);

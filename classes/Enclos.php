@@ -19,13 +19,10 @@ class Enclos{
 
     }
 
-    
-    
     public function clean()
     {
         echo "Je suis nettoyé";
     }
-
         
     public function getId()
     {

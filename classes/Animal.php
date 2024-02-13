@@ -3,12 +3,12 @@
 
 abstract class Animal 
 {
-    protected $_id;
-    protected string $_namespecies;
-    protected int $_weight;
-    protected int $_size;
-    protected int $_age;
-    protected int $_health;
+       protected $_id;
+       protected string $_namespecies;
+       protected int $_weight;
+       protected int $_size;
+       protected int $_age;
+       protected int $_health;
        protected bool $_isSleeping = false;  
        protected string $_type;
 
