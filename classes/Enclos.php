@@ -53,6 +53,7 @@ class Enclos{
     {
        return $this->_type = $type;
     }
+        
     public function getStatus()
     {
        return $this->_status;

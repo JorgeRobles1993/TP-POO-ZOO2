@@ -4,10 +4,15 @@ include './config/autoloader.php';
 
 
 
+$animal1 = new Poissons("un animal", 150, 62, 2, 2);
+$animal2 = new Ours("toto", 150, 62, 2);
+$animal3 = new Aigles("Oiseau", 150, 62, 2, 8);
+
 $animal1 = new Poissons("Magikarp", 150, 30, 1, 2);
 $animal2 = new Ours("Ted", 150, 210, 5);
 $animal3 = new Aigles("Oiseau", 150, 80, 2, 8);
 $animal4 = new Tigre("tono", 200, 110, 4);
+
 
 echo "Animal 1 = " . $animal1->getType() . "<br/>";
 echo "Animal 2 = " . $animal2->getType() . "<br/>";
