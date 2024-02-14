@@ -27,16 +27,34 @@ class Zoo
         $enclosCompatibles = [];
 
         //  boucle sur le tableau des enclos 
-        foreach ($this->_enclos as $enclos)
+        foreach ($this->_enclosures as $enclos)
         {
 
 
-        //  On teste si l'enclos n'est pas plein
-        //      si oui, il y a de la place
-        if (enclos->getAvailable())
-        //          si l'enclos est vide, on vérifie que le type de l'enclos = le type du nouvel animal
-        //              si = , l'enclos est compatible, on l'ajoute au tableau $enclosCompatibles
-        //              si !=, l'enclos n'est pas compatible, on passe au suivant (ne rien faire, la boucle continuera toute seule)
+        //  *On teste si l'enclos n'est pas plein
+        if ($enclos->getAvailable() == true)
+        //   *si oui, il y a de la place  
+
+        {
+            echo "il y a de la place";
+            //   *si l'enclos est vide, on vérifie que le type de l'enclos = le type du nouvel animal
+        } 
+        elseif ($enclos->getEmpty()){
+            if ($enclos->getType() == $newAnimal->getType()){
+
+            //   *si = , l'enclos est compatible, on l'ajoute au tableau $enclosCompatibles
+                    array_push($enclosCompatibles, $enclos);        
+        }//              si !=, l'enclos n'est pas compatible, on passe au suivant (ne rien faire, la boucle continuera toute seule)
+        else {
+            echo "l'enclos n'est pas compatible";
+        }
+        }
+
+        if ($enclos->getType()) {
+            
+        }
+
+        
         //          si l'enclos contient au moins 1 animal, on vérifie que l'espèce de l'animal dans l'enclos = l'espèce du nouvel animal
         //              si = , l'enclos est compatible, on l'ajoute au tableau $enclosCompatibles
         //              si != , l'enclos n'est pas compatible, on passe au suivant (ne rien faire, la boucle continuera toute seule)
@@ -44,15 +62,6 @@ class Zoo
         //  retour du tableau ($enclosCompatibles)
 
 
-
-
-            // si le type d'annimal est égal au type d'enclos 
-            if ($newAnimal->getType() == $enclos->getType())
-            {
-                //  Ajoute l'enclos compatible ($enclos) dans le tableau des enclos compatibles ($enclosCompatibles)
-                array_push($enclosCompatibles, $enclos); 
-            }
-        }
 
         return $enclosCompatibles;
     }
