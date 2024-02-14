@@ -11,6 +11,7 @@ abstract class Animal
        protected int $_health;
        protected bool $_isSleeping = false;  
        protected string $_type;
+       protected string $_species;
 
 
     // constructeur
@@ -107,7 +108,25 @@ abstract class Animal
    {
           return $this->_isSleeping;
    }
+
+   public function getSpecies()
+   {
+        return $this->_species;
+   }
+
+   public function setSpecies($species)
+   {
+          $this->_species = $species;
+   }
  
+   //  renvoie une chaine de texte avec les informations communes des animaux
+   public function getInfos()
+   {
+       return "Type = " . $this->getType() . "<br/>" .
+              "Name = " . $this->getName() . "<br/>" . 
+              "Size = " . $this->getSize() . "<br/>" .
+              "Age = " . $this->getAge() . "<br/>" ;
+   }
 
 
    public function sound()

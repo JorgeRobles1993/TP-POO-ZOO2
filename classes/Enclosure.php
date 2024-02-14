@@ -1,22 +1,42 @@
 <?php
-class Enclos{
+class Enclosure
+{
 
     protected $_id;
     protected $_name;
     protected $_type;
     protected $_status; // (mauvaise, correcte, bonne)
-    protected $_numberofanimals;
     protected $_animals = [];
-
-    public function __construct($id, $name, $type ,$status, $numberofanimals, $animals)
+  
+    public function __construct($id, $name, $type ,$status)
     {
         $this->_id = $id;
         $this->_name = $name;
         $this->_type = $type;
         $this->_status = $status;
-        $this->_numberofanimals = $numberofanimals;
-        $this->_animals = $animals;
+        
+    }
 
+    public function getNumberOfAnimals()
+    {
+      return count($this->_animals);
+      //BDD : select COUNT From animal ...
+    }
+
+    public function getIsEmpty()
+    {
+      if($this->getNumberOfAnimals() == 0){
+         return true;
+    }
+   }
+
+    public function getIsAvailable()
+    {
+      if($this->getNumberOfAnimals() < 6){
+         return true;
+      }else{  
+         return false;
+      }
     }
 
     public function clean()
@@ -64,16 +84,6 @@ class Enclos{
        return $this->_status = $status;
     }
 
-    public function getNumberofAnimals()
-    {
-       return $this->_numberofanimals;
-    }
-
-    public function setNumberofAnimals($numberofanimals)
-    {
-       return $this->_numberofanimals = $numberofanimals;
-    }
-
     public function getAnimals()
     {
        return $this->_animals;
@@ -83,5 +93,14 @@ class Enclos{
     {
        return $this->_animals = $animals;
     }
+  //  renvoie une chaine de texte avec les informations communes des animaux
+  public function getInfos()
+  {
+ 
+      return      "Id = " . $this->getId() . "<br/>" ;
+                  "Name = " . $this->getName() . "<br/>" . 
+                  "Status = " . $this->getStatus() . "<br/>" .
+                  "Type = " . $this->getType() . "<br/>" .
+  }
 
 }
