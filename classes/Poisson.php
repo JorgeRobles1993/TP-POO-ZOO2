@@ -7,7 +7,6 @@ class Poisson extends Animal
     {
         parent::__construct($_namespecies, $_weight, $_size, $_age);
         $this->_type = "Aquatique";
-        $this->_species ="Poisson";
     }
     
 

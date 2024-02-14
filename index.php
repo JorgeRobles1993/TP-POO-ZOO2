@@ -9,9 +9,9 @@ include './config/autoloader.php';
   - * faire les function Enclos->getIsEmpty(), Enclos->getIsFull(), Enclos->getIsAvailable()
   - * ecrire le code de Zoo->getCompatibleEnclos
   - * dans enclos, supprimer numberOfAnimals car on connait le nombre d'animaux de l'enclos avec le nombre de ligne dans le tableau $_animals
-  - * dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
-  - * faire un getInfos pour les enclos (comme pour la classe animal)
-  - tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
+  -   dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
+  -   faire un getInfos pour les enclos (comme pour la classe animal)
+  -   tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
 */
 
 
@@ -23,7 +23,7 @@ $Zoo1->Employee->NettoyerEnclos();
 */
 $animal1 = new Poisson("Magikarp", 150, 30, 1, 2);
 $animal2 = new Ours("Ted", 150, 210, 5);
-$animal3 = new Aigle("Oiseau", 150, 80, 2, 8);
+$animal3 = new Aigle("Oiseau", 150, 80, 2, 2);
 $animal4 = new Tigre("Tigre du bengale", 200, 110, 4);
 
 echo "Animal 1 info = <br/>" . $animal1->getInfos() . "<br/>";

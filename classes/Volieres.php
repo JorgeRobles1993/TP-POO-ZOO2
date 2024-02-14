@@ -1,5 +1,5 @@
 <?php
-class Volieres extends Enclos {
+class Volieres extends Enclosure {
     
     protected int $_hauteur;
 

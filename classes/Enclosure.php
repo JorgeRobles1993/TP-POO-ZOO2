@@ -14,7 +14,6 @@ class Enclosure
         $this->_name = $name;
         $this->_type = $type;
         $this->_status = $status;
-        
     }
 
     public function getNumberOfAnimals()
@@ -32,9 +31,10 @@ class Enclosure
 
     public function getIsAvailable()
     {
+      // *A FAIRE
       if($this->getNumberOfAnimals() < 6){
          return true;
-      }else{  
+      }else{
          return false;
       }
     }
@@ -97,10 +97,10 @@ class Enclosure
   public function getInfos()
   {
  
-      return      "Id = " . $this->getId() . "<br/>" ;
+      return      "Id = " . $this->getId() . "<br/>" .
                   "Name = " . $this->getName() . "<br/>" . 
                   "Status = " . $this->getStatus() . "<br/>" .
-                  "Type = " . $this->getType() . "<br/>" .
+                  "Type = " . $this->getType() . "<br/>"; 
   }
 
 }

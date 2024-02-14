@@ -6,7 +6,7 @@ class Zoo
     protected $_employee;
     protected $_enclosures = [];
 
-    public function AddEnclosure(Enclos $_enclosure)
+    public function AddEnclosure(Enclosure $_enclosure)
     {
         array_push($this->_enclosures, $_enclosure);
         //BDD : Insert Into enclosure (....) values (...)

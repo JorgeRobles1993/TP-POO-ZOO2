@@ -54,7 +54,7 @@ class Employee{
           $this->_gender = $gender;
    }
 
-    public function canMoveAnimal(Animal $animalToMove, Enclos $destinationEnclos) : bool
+    public function canMoveAnimal(Animal $animalToMove, Enclosure $destinationEnclos) : bool
     {
         /*
             tester le type d'animal

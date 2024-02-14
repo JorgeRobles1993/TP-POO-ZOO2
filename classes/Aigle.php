@@ -3,6 +3,7 @@
 class Aigle extends Animal
 {
     protected int $nombreAile;
+
     
     public function __construct($_namespecies, $_weight, $_size, $_age, $nombreAile)
     {
@@ -10,7 +11,7 @@ class Aigle extends Animal
 
         $this->nombreAile=$nombreAile;
         $this->_type = "Aerienne";
-        $this->_species ="Aigle";
+       
     }
     
     public function sound()

@@ -36,11 +36,7 @@ CREATE TABLE `Animals` (
   `health` int(11) NOT NULL,
   `isSleeping` tinyint(1) NOT NULL,
   `type` varchar(255) NOT NULL,
-<<<<<<< HEAD
-  `enclos_id` int(11) NOT NULL
-=======
   `enclos_id` int(11)  NULL -- NULL signifie que l'animal n'est pas dans un enclos
->>>>>>> 58dc252e76f7670a6894c6417bfb54eccfa13ed6
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -53,12 +49,8 @@ CREATE TABLE `Employee` (
   `id` int(11) NOT NULL,
   `Name` int(11) NOT NULL,
   `Age` int(11) NOT NULL,
-<<<<<<< HEAD
-  `Gender` int(11) NOT NULL
-=======
   `Gender` int(11) NOT NULL,
   `zoo_id` int(11) NOT NULL
->>>>>>> 58dc252e76f7670a6894c6417bfb54eccfa13ed6
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -72,10 +64,6 @@ CREATE TABLE `Enclos` (
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
-<<<<<<< HEAD
-  `numberofanimals` int(11) NOT NULL,
-=======
->>>>>>> 58dc252e76f7670a6894c6417bfb54eccfa13ed6
   `zoo_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
