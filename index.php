@@ -21,7 +21,6 @@ $Zoo1 = new Zoo();
 
 $Zoo1->Employee->MoveAnimalEnclos();
 $Zoo1->Employee->NettoyerEnclos();
-*/
 // $ZooManager->add($new)
 
 $ZooManager = new ZooManager($dbConnexion);
@@ -29,6 +28,7 @@ if(!empty($_POST["name"]))
 {
   $ZooManager->addZooDb($_POST["name"]);
 }
+
 ?>
 
 <div class="grid place-items-center h-screen">

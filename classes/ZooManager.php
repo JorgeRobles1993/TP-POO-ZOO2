@@ -18,10 +18,10 @@ class ZooManager
     {
         $preparedRequest = $this->dbConnexion->prepare('INSERT INTO `zoo`(`name`,`n_enclos`) VALUES (?,?)');
         $preparedRequest->execute([
-            $nameZoo,
-            0
-        ]);
-
+          
+           $nameZoo,
+           0
+            ]);  
     }
  }
 
