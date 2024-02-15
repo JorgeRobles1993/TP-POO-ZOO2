@@ -1,6 +1,6 @@
 <?php
 
-class Aigles extends Animal
+class Aigle extends Animal
 {
     protected int $nombreAile;
 

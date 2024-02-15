@@ -1,5 +1,5 @@
 <?php
-class Enclos
+class Enclosure
 {
 
     protected $_id;
@@ -14,7 +14,6 @@ class Enclos
         $this->_name = $name;
         $this->_type = $type;
         $this->_status = $status;
-
     }
 
     public function getNumberOfAnimals()
@@ -85,7 +84,6 @@ class Enclos
        return $this->_status = $status;
     }
 
-
     public function getAnimals()
     {
        return $this->_animals;
@@ -95,5 +93,14 @@ class Enclos
     {
        return $this->_animals = $animals;
     }
+  //  renvoie une chaine de texte avec les informations communes des animaux
+  public function getInfos()
+  {
+ 
+      return      "Id = " . $this->getId() . "<br/>" .
+                  "Name = " . $this->getName() . "<br/>" . 
+                  "Status = " . $this->getStatus() . "<br/>" .
+                  "Type = " . $this->getType() . "<br/>"; 
+  }
 
 }

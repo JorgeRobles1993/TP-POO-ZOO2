@@ -1,6 +1,6 @@
 <?php
 
-class Poissons extends Animal
+class Poisson extends Animal
 {
 
     public function __construct($_namespecies, $_weight, $_size, $_age)
