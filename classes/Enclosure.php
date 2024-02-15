@@ -92,9 +92,9 @@ class Enclosure
     public function setAnimals($animals)
     {
        return $this->_animals = $animals;
-
+    }
   //  renvoie une chaine de texte avec les informations communes des animaux
-  public function getInfos()
+      public function getInfos()
   {
  
       return      "Id = " . $this->getId() . "<br/>" .
