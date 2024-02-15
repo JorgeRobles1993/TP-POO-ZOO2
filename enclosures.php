@@ -1,14 +1,17 @@
 <?php
 include './partials/header.php';
 include './config/autoloader.php';
+include './config/debug.php';
 
 $enclos = [];
 $enclos1 = new Cages(1, "cage de tigres", "terrestre", "propre", 6, "tigre");
 $enclos2 = new Aquarium(2, "Aquarium des poissons", "aquatiques", "bonne", 5, "poissons", 10);
 $enclos3 = new Volieres(3, "Voliere des aigles", "aeriennes", "sale", 4, "aigles", 100);
+$enclos4 = new Cages(4, "Cage des Ours", "terrestre", "bonne", 4, "Ours", 100);
 array_push($enclos, $enclos1);
 array_push($enclos, $enclos2);
 array_push($enclos, $enclos3);
+array_push($enclos, $enclos4);
 
 ?>
 
@@ -30,18 +33,15 @@ array_push($enclos, $enclos3);
     </div>
 </div>
 
-<div class="card flex flex-wrap justify-evenly mb-20">
+<div class="card flex flex-wrap justify-evenly">
 
     <?php
     foreach ($enclos as $enclo) {
 
     ?>
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-            <p>ID: <?= $enclo->getId() ?></p>
-            <p>Name: <?= $enclo->getName() ?></p>
-            <p>Type: <?= $enclo->getType() ?></p>
-            <p>Status: <?= $enclo->getStatus() ?></p>
+            <p><?= $enclo->getInfos() ?></p>
+            
 
             <?php
             if ($enclo->getType() == "Aquatique") {
