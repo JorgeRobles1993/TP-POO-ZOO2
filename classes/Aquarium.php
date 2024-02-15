@@ -3,7 +3,7 @@
 class Aquarium extends Enclosure
 {
 
-    protected int $_salinite;
+    protected $_salinite;
 
     public function __construct($_id, $_name, $_status, $_numberofanimals, $_animals, $salinite)
     {

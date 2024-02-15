@@ -3,7 +3,7 @@
 class Tigre extends Animal
 {
     
-    protected $_species;
+    protected string $_species;
 
     public function __construct($_namespecies, $_weight, $_size, $_age)
     {

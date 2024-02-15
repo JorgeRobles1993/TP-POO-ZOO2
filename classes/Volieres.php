@@ -1,7 +1,7 @@
 <?php
 class Volieres extends Enclosure {
     
-    protected int $_hauteur;
+    protected $_hauteur;
 
     public function __construct($_id, $_name, $_status, $_numberofanimals, $_animals, $hauteur)
     {
