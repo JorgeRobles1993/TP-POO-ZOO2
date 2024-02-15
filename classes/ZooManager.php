@@ -14,10 +14,13 @@ class ZooManager
 
 
 
-    public function addZooDb()
+    public function addZooDb($nameZoo)
     {
-
-
+        $preparedRequest = $this->dbConnexion->prepare('INSERT INTO `zoo`(`name`,`n_enclos`) VALUES (?,?)');
+        $preparedRequest->execute([
+           $nameZoo,
+           0
+            ]);  
     }
 }
 

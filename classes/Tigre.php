@@ -9,8 +9,14 @@ class Tigre extends Animal
     {
         parent::__construct($_namespecies, $_weight, $_size, $_age);
         $this->_type = "TERRESTRE";
-        $this->_species ="Tigre";
+        $this->_species = "Tigre";
     }
+      public function getSpecie(){
+
+        return $this->_species;
+
+    }
+    
     
     public function sound()
     {

@@ -1,6 +1,8 @@
 <?php 
 include './partials/header.php';
 include './config/autoloader.php';
+include './config/debug.php';
+include './config/db.php';
 /*
   A FAIRE : 
   - * le type de Animal et le type de Enclos doit être identique pour qu'on puisse les comparer (AQUATIQUE // aquatiques)
@@ -19,7 +21,15 @@ $Zoo1 = new Zoo();
 $Zoo1->Employee->MoveAnimalEnclos();
 $Zoo1->Employee->NettoyerEnclos();
 */
-$ZooManager->add($new)
+
+
+$zooManager = new ZooManager($dbConnexion);
+if(!empty($_POST["name"]))
+{
+  $zooManager->addZooDb($_POST["name"]);
+}
+
+
 ?>
 
 <div class="grid place-items-center h-screen">
@@ -34,13 +44,7 @@ $ZooManager->add($new)
     </div>
 </div>
 
-<form class="max-w-sm mx-auto">
-  <div class="mb-5">
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text">CREER UN ZOO</label>
-    <input type="" id="newzoo" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name ZOO" required />
-  </div>
 
-<div class="card flex flex-wrap justify-evenly mb-20">
 
 <?php 
 include './partials/footer.php';

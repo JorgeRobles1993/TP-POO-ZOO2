@@ -9,7 +9,14 @@ class Ours extends Animal
     {
         parent::__construct($_namespecies, $_weight, $_size, $_age);
         $this->_type = "TERRESTRE";
-        $this->_type ="Ours";
+        $this->_species="Ours";
+
+    }
+
+    public function getSpecie(){
+
+        return $this->_species;
+
     }
     
 
