@@ -9,7 +9,7 @@ include './config/autoloader.php';
   - * faire les function Enclos->getIsEmpty(), Enclos->getIsFull(), Enclos->getIsAvailable()
   - * ecrire le code de Zoo->getCompatibleEnclos
   - * dans enclos, supprimer numberOfAnimals car on connait le nombre d'animaux de l'enclos avec le nombre de ligne dans le tableau $_animals
-  -   dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
+  - * dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
   -   faire un getInfos pour les enclos (comme pour la classe animal)
   -   tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
 */
@@ -21,16 +21,10 @@ $Zoo1 = new Zoo();
 $Zoo1->Employee->MoveAnimalEnclos();
 $Zoo1->Employee->NettoyerEnclos();
 */
-$animal1 = new Poissons("Magikarp", 150, 30, 1, 2);
+$animal1 = new Poisson("Magikarp", 150, 30, 1, 2);
 $animal2 = new Ours("Ted", 150, 210, 5);
-$animal3 = new Aigles("Oiseau", 150, 80, 2, 2);
+$animal3 = new Aigle("Oiseau", 150, 80, 2, 2);
 $animal4 = new Tigre("Tigre du bengale", 200, 110, 4);
-
-echo "Animal 1 info = <br/>" . $animal1->getInfos() . "<br/>";
-echo "Animal 2 info = <br/>" . $animal2->getInfos() . "<br/>";
-echo "Animal 3 info = <br/>" . $animal3->getInfos() . "<br/>";
-echo "Animal 4 info = <br/>" . $animal4->getInfos() . "<br/>";
-
 
 $enclos = [];
 $enclos1 = new Cages(1, "cage de tigres", "terrestre", "propre", 6, "tigre");
@@ -39,6 +33,10 @@ $enclos3 = new Volieres(3, "Voliere des aigles", "aeriennes", "sale", 4, "aigles
 array_push($enclos, $enclos1);
 array_push($enclos, $enclos2);
 array_push($enclos, $enclos3);
+
+
+$ZooManager->add($new)
+
 
 ?>
 
@@ -50,48 +48,18 @@ array_push($enclos, $enclos3);
 
 
 
+
+<form class="max-w-sm mx-auto">
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text">CREER UN ZOO</label>
+    <input type="" id="newzoo" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name ZOO" required />
+  </div>
+
+
+
 <div class="card flex flex-wrap justify-evenly mb-20">
 
-<?php 
-foreach ($enclos as $enclo) { 
-  
-  ?>
-  
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  
-  <p><?=  $enclo->getId() ?></p>
-  <p><?=  $enclo->getName() ?></p>
-  <p>Type = <?=  $enclo->getType() ?></p>
-  <p><?=  $enclo->getStatus() ?></p>
-
-  <?php 
-  if($enclo->getType() == "Aquatique"){
-    ?>
-  
-  <p><?=  $enclo->getSalinite() ?></p>
-  
-   <?php
-   }
-  
-   elseif($enclo->getType() == "Aerienne")
-   {?>
-  <p><?=  $enclo->getHauteur() ?></p>
-  
-  <?php 
-  }
-  ?>
-
-</div>  
-
-
-
-<?php
-}
-
-?>
-
-</div>
 
 
 <?php 

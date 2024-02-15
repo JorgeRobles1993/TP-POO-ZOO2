@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Feb 13, 2024 at 03:28 PM
+-- Generation Time: Feb 15, 2024 at 12:05 PM
 -- Server version: 10.6.12-MariaDB-1:10.6.12+maria~ubu2004-log
 -- PHP Version: 8.1.14
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Animals`
+-- Table structure for table `animals`
 --
 
-CREATE TABLE `Animals` (
+CREATE TABLE `animals` (
   `id` int(11) NOT NULL,
   `namespecies` varchar(11) NOT NULL,
   `weight` int(11) NOT NULL,
@@ -36,16 +36,16 @@ CREATE TABLE `Animals` (
   `health` int(11) NOT NULL,
   `isSleeping` tinyint(1) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `enclos_id` int(11)  NULL -- NULL signifie que l'animal n'est pas dans un enclos
+  `enclos_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Employee`
+-- Table structure for table `employee`
 --
 
-CREATE TABLE `Employee` (
+CREATE TABLE `employee` (
   `id` int(11) NOT NULL,
   `Name` int(11) NOT NULL,
   `Age` int(11) NOT NULL,
@@ -56,27 +56,29 @@ CREATE TABLE `Employee` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Enclos`
+-- Table structure for table `enclos`
 --
 
-CREATE TABLE `Enclos` (
+CREATE TABLE `enclos` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
+  `numberofanimals` int(11) NOT NULL,
   `zoo_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `User`
+-- Table structure for table `zoo`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `zoo` (
   `id` int(11) NOT NULL,
-  `username` int(11) NOT NULL,
-  `created_at` datetime NOT NULL
+  `name` varchar(255) NOT NULL,
+  `id_users` int(11) DEFAULT NULL,
+  `n_enclos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,27 +86,30 @@ CREATE TABLE `User` (
 --
 
 --
--- Indexes for table `Animals`
+-- Indexes for table `animals`
 --
-ALTER TABLE `Animals`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `animals`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `animalid_enclos` (`enclos_id`);
 
 --
--- Indexes for table `Employee`
+-- Indexes for table `employee`
 --
-ALTER TABLE `Employee`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employe_zooid` (`zoo_id`);
 
 --
--- Indexes for table `Enclos`
+-- Indexes for table `enclos`
 --
-ALTER TABLE `Enclos`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `enclos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `enclos_zooid` (`zoo_id`);
 
 --
--- Indexes for table `User`
+-- Indexes for table `zoo`
 --
-ALTER TABLE `User`
+ALTER TABLE `zoo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -112,28 +117,50 @@ ALTER TABLE `User`
 --
 
 --
--- AUTO_INCREMENT for table `Animals`
+-- AUTO_INCREMENT for table `animals`
 --
-ALTER TABLE `Animals`
+ALTER TABLE `animals`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Employee`
+-- AUTO_INCREMENT for table `employee`
 --
-ALTER TABLE `Employee`
+ALTER TABLE `employee`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Enclos`
+-- AUTO_INCREMENT for table `enclos`
 --
-ALTER TABLE `Enclos`
+ALTER TABLE `enclos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `User`
+-- AUTO_INCREMENT for table `zoo`
 --
-ALTER TABLE `User`
+ALTER TABLE `zoo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `animals`
+--
+ALTER TABLE `animals`
+  ADD CONSTRAINT `animalid_enclos` FOREIGN KEY (`enclos_id`) REFERENCES `enclos` (`id`);
+
+--
+-- Constraints for table `employee`
+--
+ALTER TABLE `employee`
+  ADD CONSTRAINT `employe_zooid` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`);
+
+--
+-- Constraints for table `enclos`
+--
+ALTER TABLE `enclos`
+  ADD CONSTRAINT `enclos_zooid` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

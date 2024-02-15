@@ -1,5 +1,5 @@
 <?php
-class Enclos
+class Enclosure
 {
 
     protected $_id;
