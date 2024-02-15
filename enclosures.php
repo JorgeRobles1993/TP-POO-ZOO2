@@ -10,7 +10,50 @@ array_push($enclos, $enclos1);
 array_push($enclos, $enclos2);
 array_push($enclos, $enclos3);
 
+?>
 
+<div class="card flex flex-wrap justify-evenly mb-20">
+
+<?php 
+foreach ($enclos as $enclo) { 
+  
+  ?>
+  
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  
+  <p><?=  $enclo->getId() ?></p>
+  <p><?=  $enclo->getName() ?></p>
+  <p>Type = <?=  $enclo->getType() ?></p>
+  <p><?=  $enclo->getStatus() ?></p>
+
+  <?php 
+  if($enclo->getType() == "Aquatique"){
+    ?>
+  
+  <p><?=  $enclo->getSalinite() ?></p>
+  
+   <?php
+   }
+  
+   elseif($enclo->getType() == "Aerienne")
+   {?>
+  <p><?=  $enclo->getHauteur() ?></p>
+  
+  <?php 
+  }
+  ?>
+
+</div>  
+
+
+
+<?php
+}
+
+?>
+
+</div>
 ?>
 
 <div class="CreateEnclosure grid place-items-center m-screen m-5">
@@ -31,16 +74,12 @@ array_push($enclos, $enclos3);
     </div>
 </div>
 
-
-
 <div class="card flex flex-wrap justify-evenly mb-20">
 
     <?php
     foreach ($enclos as $enclo) {
 
     ?>
-
-
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
             <p>ID: <?= $enclo->getId() ?></p>
@@ -63,8 +102,6 @@ array_push($enclos, $enclos3);
             ?>
 
         </div>
-
-
 
     <?php
     }

@@ -42,6 +42,7 @@ class Zoo
 
         return $enclosCompatibles;
     }
+    }
 }
 
 }

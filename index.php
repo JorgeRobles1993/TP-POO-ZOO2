@@ -10,18 +10,16 @@ include './config/autoloader.php';
   - * ecrire le code de Zoo->getCompatibleEnclos
   - * dans enclos, supprimer numberOfAnimals car on connait le nombre d'animaux de l'enclos avec le nombre de ligne dans le tableau $_animals
   - * dans les classes Aquarium, Cages et Volieres, dans leur constructeur supprimer le paramètre $_type et forcer la valeur dans le constructeur (comme dans la classe Aigles)
-  - * faire un getInfos pour les enclos (comme pour la classe animal)
-  - * tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
+  -   faire un getInfos pour les enclos (comme pour la classe animal)
+  -   tout renommer en anglais (enclos => enclosure etc.), utiliser des noms au singulier pour les classes (Animal, Aigle, Tigre, Poisson)
 */
-
-
 /*
 $Zoo1 = new Zoo();
 
 $Zoo1->Employee->MoveAnimalEnclos();
 $Zoo1->Employee->NettoyerEnclos();
 */
-
+$ZooManager->add($new)
 ?>
 
 <div class="grid place-items-center h-screen">
@@ -36,6 +34,13 @@ $Zoo1->Employee->NettoyerEnclos();
     </div>
 </div>
 
+<form class="max-w-sm mx-auto">
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text">CREER UN ZOO</label>
+    <input type="" id="newzoo" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name ZOO" required />
+  </div>
+
+<div class="card flex flex-wrap justify-evenly mb-20">
 
 <?php 
 include './partials/footer.php';
