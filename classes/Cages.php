@@ -6,7 +6,7 @@ class Cages extends Enclosure {
     {
         parent::__construct($_id, $_name, $_status, $_numberofanimals, $_animals);
         
-    
+        $this->_type = "Terrestre";
 }
 
 }
