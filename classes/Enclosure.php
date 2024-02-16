@@ -1,106 +1,76 @@
 <?php
-class Enclosure
+class Enclosure {
+
+private int $id;
+private string $name;
+private int $cleanness = 100;
+private int $nbr_max_animals = 6;
+private array $animals = [];
+private string $type;
+private int $zoo_id;
+
+public function __construct(array $data)
 {
+    $this->hydrate($data);
+}    
 
-    protected $_id;
-    protected $_name;
-    protected $_type;
-    protected $_status; // (mauvaise, correcte, bonne)
-    protected $_animals = [];
-  
-    public function __construct($id, $name, $type ,$status)
-    {
-        $this->_id = $id;
-        $this->_name = $name;
-        $this->_type = $type;
-        $this->_status = $status;
+public function hydrate(array $data){
+    foreach ($data as $key => $value) {
+        $method = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+        if (method_exists($this, $method)) {
+            $this->$method($value);
+        }
     }
+}
 
-    public function getNumberOfAnimals()
-    {
-      return count($this->_animals);
-      //BDD : select COUNT From animal ...
-    }
+public function getId(){
+    return $this->id;
+}
+public function setId($id){
+    $this->id = $id;
+}
+public function getName(){
+    return $this->name;
+}
+public function setName($name){
+    $this->name = $name;
+}
 
-    public function getIsEmpty()
-    {
-      if($this->getNumberOfAnimals() == 0){
-         return true;
-    }
-   }
+public function getCleanness(){
+    return $this->cleanness;
+}
+public function setCleanness($cleanness){
+    $this->cleanness = $cleanness;
+}
+public function getNbrMaxAnimals(){
+    return $this->nbr_max_animals;
+}
+public function setNbrMaxAnimals($nbr_max_animals){
+    $this->nbr_max_animals = $nbr_max_animals;
+}
+public function getZooId(){
+    return $this->zoo_id;
+}
+public function setZooId($zoo_id){
+    $this->zoo_id = $zoo_id;
+}
 
-    public function getIsAvailable()
-    {
-      // *A FAIRE
-      if($this->getNumberOfAnimals() < 6){
-         return true;
-      }else{
-         return false;
-      }
-    }
+public function getAnimals(){
+    return $this->animals;
+}
+public function setAnimals($animals){
+    $this->animals = $animals;
+}
+public function addAnimal($animal){
+    // $this->animals[] = $animals;
+    array_push($this->animals, $animal);
+}
 
-    public function clean()
-    {
-        echo "Je suis nettoyé";
-    }
-        
-    public function getId()
-    {
-       return $this->_id;
-    }
-
-    public function setId($id)
-    {
-       return $this->_id = $id;
-    }
-
-    public function getName()
-    {
-       return $this->_name;
-    }
-
-    public function setName($name)
-    {
-       return $this->_name = $name;
-    }
-
-    public function getType()
-    {
-       return $this->_type;
-    }
-
-    public function setType($type)
-    {
-       return $this->_type = $type;
-    }
-        
-    public function getStatus()
-    {
-       return $this->_status;
-    }
-
-    public function setStatus($status)
-    {
-       return $this->_status = $status;
-    }
-
-    public function getAnimals()
-    {
-       return $this->_animals;
-    }
-
-    public function setAnimals($animals)
-    {
-       return $this->_animals = $animals;
-    }
-  //  renvoie une chaine de texte avec les informations communes des animaux
-      public function getInfos()
-  {
- 
-      return      "Id = " . $this->getId() . "<br/>" .
-                  "Name = " . $this->getName() . "<br/>" . 
-                  "Status = " . $this->getStatus() . "<br/>" .
-                  "Type = " . $this->getType() . "<br/>"; 
-  }
+public function getType(){
+    return $this->type;
+}
+public function setType($type){
+    $this->type = $type;
+}
 
 }

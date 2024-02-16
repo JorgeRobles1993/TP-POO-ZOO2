@@ -12,7 +12,7 @@
     
     <header>
      <!-- jorge's navbar-->
-     <nav class="bg-white border-gray-200 dark:bg-gray-900">
+     <nav class="navbar bg-white border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex justify-between mx-auto">
     <a href="./index.php"><img src="../images/monkeygifnavbar.gif" class="h-12"/></a>
     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>

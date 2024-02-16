@@ -29,10 +29,10 @@ array_push($animal, $animal8);
     <?php 
     foreach ($animal as $key => $an) {
       ?>
-      <div class="items-center w-1/2 border border-solid border-black">
+      <div class="relative w-1/2 border border-solid border-black">
       <img class="w-56" src="./images/<?= $an->getSpecies() ?>.png" alt="">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2"><?= $an->getInfos() ?></div>
+      <div class="absolute bottom-0 mt-5 px-6 py-4">
+        <div class="items-end font-bold text-xl mb-2"><?= $an->getInfos() ?></div>
         </div>
         </div>
         <?php  
@@ -43,8 +43,8 @@ array_push($animal, $animal8);
 
 
 
-<div class="CreateEnclosure grid place-items-center m-screen m-5">
-    <h1>CHOISIS UN ANIMAL</h1>
+<div class="CreateAnimals grid place-items-center m-screen m-5">
+    <h2>Add an animal</h2>
     <div class="inline-block relative w-64">
         <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
             <label for="form">AJOUTER UN ANNIMAL</label>
