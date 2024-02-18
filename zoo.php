@@ -1,12 +1,18 @@
 <?php include 'config/autoloader.php'; ?>
 <?php include 'config/db.php'; ?>
 <?php
-$zooManager = new ZooManager($dbConnexion);
-$enclosManager = new EnclosManager($dbConnexion);
+if (!empty($_GET["zoo_id"]))
+{
+    $zooManager = new ZooManager($dbConnexion);
+    $enclosManager = new EnclosManager($dbConnexion);
 
-$zoo = $zooManager->getById($_GET['zoo_id']);
-$enclosManager->findByZooId($zoo);
-
+    $zoo = $zooManager->getById($_GET['zoo_id']);
+    $enclosManager->findByZooId($zoo);
+}
+else
+{
+    header('Location: ./index.php');
+}
 ?>
 <?php include 'partials/header.php'; ?>
 <section class="">
@@ -18,12 +24,12 @@ $enclosManager->findByZooId($zoo);
     <form action="./process/enclos/process_add_enclos.php" method="post">
         <input class="form-control" name="name" type="text" placeholder="Nom de mon enclos">
         <select name="type" id="type">
-            <option value="aquarium">Aquarium</option>
-            <option value="savane">Savane</option>
-            <option value="voliere">Volière</option>
+            <option value="Aquatique">Aquatique</option>
+            <option value="Terrestre">Terrestre</option>
+            <option value="Aerienne">Aerienne</option>
         </select>
         <input class="" type="hidden" name="zoo_id" value="<?= $zoo->getId() ?>">
-        <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Create an enclosure</button>
+        <button type="submit" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Create an enclosure</button>
     </form>
 </section>
 
@@ -38,7 +44,7 @@ $enclosManager->findByZooId($zoo);
                     <h5 class="card-title"><?= $enclos->getName() ?></h5>
                     <p class="card-text"> Nombre maximun d'enclos : <?= $enclos->getNbrMaxAnimals() ?></p>
                     <p class="card-text"> <?= $enclos->getType() ?></p>
-                    <a href="./zoo.php?zoo_id=<?= $enclos->getId() ?>" class="btn btn-primary">Entrer dans l'Enclos ! </a>
+                    <a href="./enclosures.php?enclosure_id=<?= $enclos->getId() ?>" class="btn btn-primary">Entrer dans l'Enclos ! </a>
                 </div>
             </div>
         <?php } ?>

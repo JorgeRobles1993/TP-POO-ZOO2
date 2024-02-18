@@ -11,7 +11,7 @@ class EnclosManager {
     }
 
 
-    public function addEnclos(Enclosure $enclos){
+    public function addEnclosureDb(Enclosure $enclos){
         $preparedRequest = $this->dbConnexion->prepare(
             "INSERT INTO enclos (name, zoo_id, cleanness, type, nbr_max_animals) VALUE (?,?,?,?,?)"
         );
