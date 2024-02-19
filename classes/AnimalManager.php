@@ -13,33 +13,44 @@ class AnimalManager {
 
     public function addAnimalDb(Animal $animal){
         $preparedRequest = $this->dbConnexion->prepare(
-            //  A FAIRE !
-            //"INSERT INTO enclos (name, zoo_id, cleanness, type, nbr_max_animals) VALUE (?,?,?,?,?)"
+            "INSERT INTO animals (name, namespecies, weight, size, age, health, type, enclos_id) VALUE (?,?,?,?,?,?,?,?)"
         );
         $preparedRequest->execute([
-                // A FAIRE
-         /*   $enclos->getName(),
-            $enclos->getZooId(),
-            $enclos->getCleanness(),
-            $enclos->getType(),
-            $enclos->getNbrMaxAnimals()*/
+            $animal->getName(),
+            $animal->getNamespecies(),
+            $animal->getWeight(),
+            $animal->getSize(),
+            $animal->getAge(),
+            $animal->getSoin(),
+            $animal->getType(),
+            $animal->getEnclosId()
         ]);
     }
 
-    public function findByEnclosID(Enclosure $enclosure){
+    public function findByEnclosId(Enclosure $enclosure){
         
         $preparedRequest = $this->dbConnexion->prepare(
-            
-            //  A FAIRE 
-            //"SELECT * FROM enclos WHERE zoo_id = ?"
+            "SELECT * FROM animals WHERE enclos_id = ?"
         );                  
-    $preparedRequest->execute(/*   A FAIRE     [$zoo->getId()]*/);
+        $preparedRequest->execute([$enclosure->getId()]);
 
         $animalArray = $preparedRequest->fetchAll(PDO::FETCH_ASSOC);
-/*      A FAIRE
-        foreach ($enclosArray as $line) {
-            $enclos = new Enclosure($line);
-            $zoo->addEnclos($enclos);
-        }*/
+        
+        foreach ($animalArray as $line) {
+            $animal = new $line['namespecies']($line);
+            $enclosure->addAnimal($animal);
+        }
+        return $enclosure;
+    }
+
+    public function getByEnclosId($id){
+        $preparedRequest = $this->dbConnexion->prepare(
+            "SELECT * FROM animals WHERE id = ?"
+        );
+        $preparedRequest->execute([$id]);
+    
+        $line = $preparedRequest->fetch(PDO::FETCH_ASSOC);
+        $enclos = new Enclosure($line);
+        return $enclos;
     }
 }

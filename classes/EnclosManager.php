@@ -5,7 +5,7 @@ class EnclosManager {
     private PDO $dbConnexion;
 
 
-    public function __construct(PDO $dbConnexion)
+    public function __construct($dbConnexion)
     {
         $this->dbConnexion = $dbConnexion;        
     }
@@ -38,4 +38,24 @@ class EnclosManager {
             $zoo->addEnclos($enclos);
         }
     }
+
+public function getById($id){
+    $preparedRequest = $this->dbConnexion->prepare(
+        "SELECT * FROM zoo WHERE id = ?"
+    );
+    $preparedRequest->execute([$id]);
+
+    $line = $preparedRequest->fetch(PDO::FETCH_ASSOC);
+    $zoo = new Zoo($line);
+    return $zoo;
+}
+public function getEnclosById($id){
+    $preparedRequest = $this->dbConnexion->prepare('SELECT * FROM `enclos` WHERE id = ?');
+    $preparedRequest->execute([
+        $id
+    ]);
+    $enclos = $preparedRequest->fetch(PDO::FETCH_ASSOC);
+    $enclosure = new Enclosure($enclos);
+    return $enclosure;
+}
 }

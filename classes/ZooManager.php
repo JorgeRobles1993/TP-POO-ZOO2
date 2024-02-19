@@ -31,9 +31,6 @@ class ZooManager
         $preparedRequest->execute();
 
         $zoosArray = $preparedRequest->fetchAll(PDO::FETCH_ASSOC);
-        // echo '<pre>';
-        // var_dump($zoosArray);
-        // echo '</pre>';
         $zoosArrayObject = [];
         foreach ($zoosArray as $line) {
             $zoo = new Zoo($line);

@@ -4,26 +4,31 @@
 abstract class Animal 
 {
        protected $_id;
+       protected string $_name;
        protected string $_namespecies;
        protected int $_weight;
        protected int $_size;
        protected int $_age = 0;
-       protected int $_health;
+       protected int $_health = 100;
        protected bool $_isSleeping = false;  
        protected string $_type;
-       protected string $_species;
+       // protected string $_species;
+       protected int $_enclos_id;
 
 
-    // constructeur
-    public function __construct($_namespecies, $_weight, $_size, $_age)
-    {
-        $this->_namespecies = $_namespecies;
-        $this->_weight = $_weight;
-        $this->_size = $_size;
-        $this->_age = $_age;
-        $this->_type = "INCONNU";
+    public function __construct(array $data)
+{
+    $this->hydrate($data);
+}    
+
+public function hydrate(array $data){
+    foreach ($data as $key => $value) {
+        $method = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+        if (method_exists($this, $method)) {
+            $this->$method($value);
+        }
     }
-    
+}
 
     // METHODE
 
@@ -46,10 +51,19 @@ abstract class Animal
 
        public function getName()
        {
+              return $this->_name;
+       }
+
+       public function setName($name)
+       {
+              $this->_name = $name;
+       }
+       public function getNamespecies()
+       {
               return $this->_namespecies;
        }
 
-       public function setName($namespecies)
+       public function setNamespecies($namespecies)
        {
               $this->_namespecies = $namespecies;
        }
@@ -109,15 +123,12 @@ abstract class Animal
               return $this->_isSleeping;
        }
 
-       public function getSpecies()
-       {
-              return $this->_species;
-       }
-
-       public function setSpecies($species)
-       {
-              $this->_species = $species;
-       }
+       public function getEnclosId(){
+              return $this->_enclos_id;
+          }
+       public function setENclosId($enclos_id){
+              $this->_enclos_id = $enclos_id;
+          }
        
        //  renvoie une chaine de texte avec les informations communes des animaux
        public function getInfos()
@@ -126,7 +137,7 @@ abstract class Animal
                      "Name = " . $this->getName() . "<br/>" . 
                      "Size = " . $this->getSize() . "<br/>" .
                      "Age = " . $this->getAge() . "<br/>" .
-                     "Specie = " . $this->getSpecies() . "<br/>";
+                     "Specie = " . $this->getNamespecies() . "<br/>";
        }
 
 
