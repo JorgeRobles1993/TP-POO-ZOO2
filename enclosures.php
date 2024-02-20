@@ -17,15 +17,10 @@ if (!empty($_GET['enclos_id']))
 }
 else
 {
-    // header('Location: ./index.php');
+     header('Location: ./index.php');
 }
 
-// test
 $animal = $enclos->getAnimals();
-
-// echo "<pre>";
-// var_dump($animal);
-// echo "</pre>";
 
 $animalType = [];
 
@@ -34,62 +29,61 @@ foreach ($animal as $key) {
     array_push($animalType, $test);
 }
 
-var_dump($animalType);
+?> 
 
-if (in_array("Tigre", $animalType)) {
-    echo "il y a des tigres";
-} else {
-    echo "il n'y a pas de tigre...";
-}
-
-// in_array()
-
-?>
+ 
 <?php include './partials/header.php'; ?>
 
-<div class="CreateEnclosure grid place-items-center m-screen m-5">
-    <h2>CREATE A NEW ANIMAL</h2>
-    <!-- faire un FORM puis redirection pour la création-->
-    <div class="inline-block relative w-64">
-        <form action="./process/animal/process_add_animal.php?Enclos_type=<?=$type?>" method="post">
-        <input type="text" placeholder="Animal name" name="name" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <input type="number" placeholder="Weight" name="weight" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <input type="number" placeholder="Age" name="age" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <input type="number" placeholder="Size" name="size" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <input type="hidden" name="enclos_id" value="<?=$id?>">
+<?php
+// une condition pour interdir d'ajouter plus de 6 animals par enclosure
+if(count($animal) <= 5){  ?>
 
-        <select name="namespecies" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-
-        <?php if ($type == "Aquatique" ) {
-            ?> <option value="Poisson">Poisson</option> <?php
-        }elseif ($type == "Aerienne") {
-            ?> <option value="Oiseau">oiseau</option> <?php
-        }elseif ($type == "Terrestre") {
-           
-            if (in_array("Tigre", $animalType)) {
-                ?> <option value="Tigre">Tigre</option> <?php
-            } elseif (in_array("Ours", $animalType)) {
-                ?> <option value="Ours">Ours</option> <?php
-            }else {
-                ?> <option value="Tigre">Tigre</option> <?php
-                ?> <option value="Ours">Ours</option> <?php
-            }
-        }?>
-
-        </select>
-
-        <input name="type" type="hidden" id="type" value="<?=$type?>"></input>
-
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-            </svg>
+    
+    <div class="CreateEnclosure grid place-items-center m-screen m-5">
+        <h2>CREATE A NEW ANIMAL</h2>
+        <!-- faire un FORM puis redirection pour la création-->
+        <div class="inline-block relative w-64">
+            <form action="./process/animal/process_add_animal.php?Enclos_type=<?=$type?>" method="post">
+            <input type="text" placeholder="Animal name" name="name" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input type="number" placeholder="Weight" name="weight" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input type="number" placeholder="Age" name="age" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input type="number" placeholder="Size" name="size" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input type="hidden" name="enclos_id" value="<?=$id?>">
+    
+            <select name="namespecies" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+    
+            <?php if ($type == "Aquatique" ) {
+                ?> <option value="Poisson">Poisson</option> <?php
+            }elseif ($type == "Aerienne") {
+                ?> <option value="Aigle">Aigle</option> <?php
+            }elseif ($type == "Terrestre") {
+               
+                if (in_array("Tigre", $animalType)) {
+                    ?> <option value="Tigre">Tigre</option> <?php
+                } elseif (in_array("Ours", $animalType)) {
+                    ?> <option value="Ours">Ours</option> <?php
+                }else {
+                    ?> <option value="Tigre">Tigre</option> <?php
+                    ?> <option value="Ours">Ours</option> <?php
+                }
+            }?>
+    
+            </select>
+    
+            <input name="type" type="hidden" id="type" value="<?=$type?>"></input>
+    
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+            </div>
+            <button type="submit" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Create</button>
+            </form>
         </div>
-        <button type="submit" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Create</button>
-        </form>
     </div>
-</div>
-
+    <?php
+}
+?>
 
 <section class="">
     <h2 class="text-center my-4">Liste des Animals</h2>
@@ -98,7 +92,7 @@ if (in_array("Tigre", $animalType)) {
             <div class="card m-2" style="width: 18rem;">
                 <img src="./images/<?= $animal->getNamespecies()?>.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"> Name:<?= $animal->getName() ?></h5>
+                    <h5 class="card-title"> Name: <?= $animal->getName() ?></h5>
                     <p class="card-text"> Spece: <?= $animal->getNamespecies() ?></p>
                     <p class="card-text"> Type: <?= $animal->getType() ?></p>
                     <p class="card-text"> Size: <?= $animal->getSize() ?></p>
