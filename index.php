@@ -30,18 +30,22 @@ $zoos = $zooManager->getAll();
 <h1 class="">EXISTING ZOOS</h1>
 <section class="grid place-items-center h-screen">
     <div class="flex flex-wrap">
-        <?php foreach ($zoos as $zoo) { ?>
-            <div class="card m-2 border-4 border-black border-solid" style="width: 18rem;">
-                <img src="./images/zoo.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $zoo->getName() ?></h5>
-                    <p class="card-text"> Enclosure Max: <?= $zoo->getNbrMaxEnclos() ?></p>
-                    <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./zoo.php?zoo_id=<?= $zoo->getId() ?>">Entrer dans le Zoo ! </a></button>
+        <?php
+        foreach ($zoos as $zoo){
+          ?>
+          <div class="card m-2 border-4 border-black border-solid" style="width: 18rem;">
+              <img src="./images/zoo.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title"><?= $zoo->getName() ?></h5>
+                  <p class="card-text"> Enclosure Max: <?= $zoo->getNbrMaxEnclos() ?></p>
+                  <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./zoo.php?zoo_id=<?= $zoo->getId() ?>">Entrer dans le Zoo ! </a></button>
 
-                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./process/zoo/process_delete_zoo.php?id_zoo=<?=$zoo->getId()?>">Delete</a></button>
-                </div>
-            </div>
-        <?php } ?>
+                  <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./process/zoo/process_delete_zoo.php?id_zoo=<?=$zoo->getId()?>">Delete</a></button>
+              </div>
+          </div>
+          <?php
+        }
+        ?>
     </div>
 </section>
 
