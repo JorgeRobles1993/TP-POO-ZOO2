@@ -88,22 +88,31 @@ if(count($animal) <= 5){  ?>
 <section class="">
     <h2 class="text-center my-4">Liste des Animals</h2>
     <div class="flex flex-wrap">
-        <?php foreach ($animals->getAnimals() as $animal) { ?>
-            <div class="card m-2" style="width: 18rem;">
+        <?php 
+        foreach ($animals->getAnimals() as $animal) 
+        { 
+            ?>
+            <div class="card border-4 border-black border-solid m-1 text-start" style="width: 18rem;">
                 <img src="./images/<?= $animal->getNamespecies()?>.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> Name: <?= $animal->getName() ?></h5>
-                    <p class="card-text"> Spece: <?= $animal->getNamespecies() ?></p>
-                    <p class="card-text"> Type: <?= $animal->getType() ?></p>
-                    <p class="card-text"> Size: <?= $animal->getSize() ?></p>
-                    <p class="card-text"> Weight: <?= $animal->getWeight() ?></p>
-                    <p class="card-text"> Age: <?= $animal->getAge() ?></p>
-                    <p class="card-text"> Health: <?= $animal->getSoin() ?></p>
-                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="#" class="btn btn-primary">Enter</a></button>
+                <div class="card-body font-bold ">
+                    <h5 class="card-title border border-black border-solid"> Name: <?= $animal->getName()?></p></h5>
+                    <p class="card-text border border-black border-solid"> Spece: <?= $animal->getNamespecies() ?></p>
+                    <p class="card-text border border-black border-solid"> Type: <?= $animal->getType() ?></p>
+                    <p class="card-text border border-black border-solid"> Size: <?= $animal->getSize() ?></p>
+                    <p class="card-text border border-black border-solid"> Weight: <?= $animal->getWeight() ?></p>
+                    <p class="card-text border border-black border-solid"> Age: <?= $animal->getAge() ?></p>
+                    <p class="card-text border border-black border-solid"> Health: <?= $animal->getSoin() ?></p>
+                    <button type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="#" class="btn btn-primary">Show stats</a></button>
                     
-                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./process/animal/process_delete_animal.php?id_Animal=<?=$animal->getId()?>&id_Enclos=<?=$animal->getEnclosId()?>">Delete</a></button>
+                    <button type="button" data-id="<?=$animal->getId()?>" class="modale text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
                 </div>
             </div>
-        <?php } ?>
+            <?php 
+        } 
+        ?>
     </div>
 </section>
+
+
+<?php
+include './partials/footer.php';
