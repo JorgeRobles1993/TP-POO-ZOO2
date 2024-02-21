@@ -40,16 +40,20 @@ if(count($enclosures) <= 5){ ?>
 ?>
 
 <section class="">
-    <h1 class="">Liste des Enclos</h1>  
+    <h2 class="">Liste des Enclos</h2>  
     <div class="flex flex-wrap">
         <?php foreach ($zoo->getEnclos() as $enclos) { ?>
-            <div class="card m-2" style="width: 18rem;">
-            <img src="./images/<?= $enclos->getType()?>.png" class="card-img-top w-64 h-64 rounded-md">
+            <div class="card m-2 border-4 border-black border-solid" style=";">
+            <img src="./images/<?= $enclos->getType()?>.png" class="card-img-top w-64 h-64">
                 <div class="card-body">
                     <h5 class="card-title"><?= $enclos->getName() ?></h5>
-                    <p class="card-text"> Nombre maximun d'enclos : <?= $enclos->getNbrMaxAnimals() ?></p>
-                    <p class="card-text"> <?= $enclos->getType() ?></p>
-                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./enclosures.php?enclos_id=<?= $enclos->getId()?>&Enclos_type=<?=$enclos->getType()?>">Enter</a></button>
+                        <p class="card-text"> Enclosure Max : <?= $enclos->getNbrMaxAnimals() ?></p>
+                        <p class="card-text"> <?= $enclos->getType() ?></p>
+
+                        <button type="button" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-white-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./enclosures.php?enclos_id=<?= $enclos->getId()?>&Enclos_type=<?=$enclos->getType()?>">Enter</a></button>
+
+                        <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./process/enclos/process_delete_enclos.php?id_Enclos=<?=$enclos->getId()?>">Delete</a></button>
+                    
                 </div>
             </div>
             <?php } ?>

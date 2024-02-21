@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-800 h-screen" onload="loader()">
+<body class="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-800 h-screen">
     
     <header>
      <!-- jorge's navbar-->
@@ -36,3 +36,5 @@
 </nav>
 
     </header>
+
+    

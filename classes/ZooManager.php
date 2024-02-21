@@ -49,6 +49,15 @@ class ZooManager
         $zoo = new Zoo($line);
         return $zoo;
     }
+
+    public function DeleteZooById(int $zoo_id)
+    {
+        $preparedRequest = $this->dbConnexion->prepare("DELETE FROM zoo WHERE id = ?");
+        $preparedRequest->execute([
+            $zoo_id
+        ]);
+    }
+
  }
 
 
