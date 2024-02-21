@@ -40,11 +40,11 @@ if(count($enclosures) <= 5){ ?>
 ?>
 
 <section class="">
-    <h2 class="text-center my-4">Liste des Enclos</h2>  
+    <h1 class="">Liste des Enclos</h1>  
     <div class="flex flex-wrap">
         <?php foreach ($zoo->getEnclos() as $enclos) { ?>
             <div class="card m-2" style="width: 18rem;">
-                <img src="https://png.pngtree.com/png-clipart/20201114/ourmid/pngtree-small-animals-in-the-zoo-png-image_2420311.jpg" class="card-img-top" alt="...">
+            <img src="./images/<?= $enclos->getType()?>.png" class="card-img-top w-64 h-64 rounded-md">
                 <div class="card-body">
                     <h5 class="card-title"><?= $enclos->getName() ?></h5>
                     <p class="card-text"> Nombre maximun d'enclos : <?= $enclos->getNbrMaxAnimals() ?></p>

@@ -27,7 +27,7 @@ $zoos = $zooManager->getAll();
     </form>
   </div>
 </div>  
-<h1 class="text-center my-4">EXISTING ZOOS</h1>
+<h1 class="">EXISTING ZOOS</h1>
 <section class="container my-5 border border-solid">
     <div class="flex flex-wrap">
         <?php foreach ($zoos as $zoo) { ?>

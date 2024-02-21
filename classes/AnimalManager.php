@@ -53,4 +53,22 @@ class AnimalManager {
         $enclos = new Enclosure($line);
         return $enclos;
     }
+
+    public function LoadAnimalEnclos($id)
+    {
+        $preparedRequest = $this->dbConnexion->prepare("SELECT * FROM enclos JOIN animals ON ? = animals.enclos_id");
+        $preparedRequest->execute([
+            $id
+        ]);
+    }
+
+
+
+    public function LoadAnimalById($id)
+    {
+        $prepareSQL = $this->dbConnexion->prepare("SELECT * FROM animals WHERE id= ?");
+        $prepareSQL->execute([
+            $id
+        ]);
+    }
 }

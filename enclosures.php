@@ -99,7 +99,9 @@ if(count($animal) <= 5){  ?>
                     <p class="card-text"> Weight: <?= $animal->getWeight() ?></p>
                     <p class="card-text"> Age: <?= $animal->getAge() ?></p>
                     <p class="card-text"> Health: <?= $animal->getSoin() ?></p>
-                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./enclosures.php?enclos_id=<?= $animal->getId() ?>" class="btn btn-primary">Enter</a></button>
+                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="#" class="btn btn-primary">Enter</a></button>
+                    
+                    <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./process/animal/process_delete_animal.php?id_Animal=<?=$animal->getId()?>&id_Enclos=<?=$animal->getEnclosId()?>">Delete</a></button>
                 </div>
             </div>
         <?php } ?>
