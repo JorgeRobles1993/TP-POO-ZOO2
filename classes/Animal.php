@@ -14,6 +14,7 @@ abstract class Animal
        protected string $_type;
        // protected string $_species;
        protected int $_enclos_id;
+       protected int $_hungry;
 
 
     public function __construct(array $data)
@@ -30,13 +31,9 @@ public function hydrate(array $data){
     }
 }
 
-    // METHODE
+ 
 
 
-     public function eat()
-     {
-          echo "L'animal mange";
-     }
     // GETTER & SETTER
 
        public function getId()
@@ -141,8 +138,14 @@ public function hydrate(array $data){
        }
 
 
-       public function sound()
+       public function getHungry()
        {
-              echo "Fais du bruit";
+              return $this->_hungry;
+       }
+
+       
+       public function setHungry($_hungry)
+       {
+              $this->_hungry = $_hungry;
        }
 }
