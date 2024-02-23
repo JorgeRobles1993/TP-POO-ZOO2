@@ -1,6 +1,5 @@
 <?php
 include './config/autoloader.php';
-include './config/debug.php';
 include 'config/db.php';
 
 $id = $_GET['enclos_id'];

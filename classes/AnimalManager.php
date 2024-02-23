@@ -4,7 +4,6 @@ class AnimalManager {
 
     private PDO $dbConnexion;
 
-
     public function __construct(PDO $dbConnexion)
     {
         $this->dbConnexion = $dbConnexion;        
@@ -22,9 +21,6 @@ class AnimalManager {
         return $animal;
 
     }
-
-
-
 
     public function addAnimalDb(Animal $animal){
         $preparedRequest = $this->dbConnexion->prepare(
@@ -69,26 +65,6 @@ class AnimalManager {
         return $enclos;
     }
 
-    // public function LoadAnimalEnclos($id)
-    // {
-    //     $preparedRequest = $this->dbConnexion->prepare("SELECT * FROM enclos JOIN animals ON ? = animals.enclos_id");
-    //     $preparedRequest->execute([
-    //         $id
-    //     ]);
-    // }
-
-
-
-    // public function LoadAnimalById($id)
-    // {
-    //     $prepareSQL = $this->dbConnexion->prepare("SELECT * FROM animals WHERE id= ?");
-    //     $prepareSQL->execute([
-    //         $id
-    //     ]);
-    // } 
-
-
-
 public function DeleteAnimalById(int $animal_id)
 {
     $preparedRequest = $this->dbConnexion->prepare("DELETE FROM animals WHERE id = ?");
@@ -96,8 +72,7 @@ public function DeleteAnimalById(int $animal_id)
         $animal_id
     ]);
 }
-
-   
+ 
 public function RandomEatLevel(array $animal)
 {
 

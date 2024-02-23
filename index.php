@@ -1,16 +1,7 @@
 <?php 
 include './config/autoloader.php';
-include './config/debug.php';
 include './config/db.php';
 include './partials/header.php';
-
-/*  TODO
-  - Finir AnimalManger
-  - Finir Enclosures.php
-  - Commit quand l'ajout d'animaux dans un enclos fonctionne
-  - (Optionnel : Renommer tous les fichiers en anglais)
-
-*/
 
 $zooManager = new ZooManager($dbConnexion);
 $zoos = $zooManager->getAll();

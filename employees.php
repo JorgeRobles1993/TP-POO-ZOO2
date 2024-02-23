@@ -1,7 +1,6 @@
 <?php 
 include './partials/header.php';
 include './config/autoloader.php';
-include './config/debug.php';
 
 $employe1 = new Employee(1,"Juan Lopéz", 25, "male");
  

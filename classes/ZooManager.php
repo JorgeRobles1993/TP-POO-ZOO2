@@ -1,6 +1,5 @@
 <?php
 
-
 class ZooManager
 {
  private PDO $dbConnexion;
@@ -11,8 +10,6 @@ class ZooManager
     {
         $this->dbConnexion = $dbConnexion;
     }
-
-
 
     public function addZooDb(Zoo $zoo)
     {

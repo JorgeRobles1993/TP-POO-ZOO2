@@ -12,7 +12,6 @@ class Volieres extends Enclosure {
         $this->_type = "Aerienne";
     }
 
-
     public function getHauteur()
     {
        return $this->_hauteur;

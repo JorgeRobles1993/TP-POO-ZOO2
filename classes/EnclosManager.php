@@ -39,9 +39,6 @@ class EnclosManager {
         }
     }
 
-
-
-
     public function getById($id){
         $preparedRequest = $this->dbConnexion->prepare(
             "SELECT * FROM zoo WHERE id = ?"
@@ -69,7 +66,5 @@ class EnclosManager {
             $enclos_id
         ]);
     }
-
-
 
 }

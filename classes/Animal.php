@@ -12,7 +12,6 @@ abstract class Animal
        protected int $_health = 100;
        protected bool $_isSleeping = false;  
        protected string $_type;
-       // protected string $_species;
        protected int $_enclos_id;
        protected int $_hungry;
 
@@ -30,9 +29,6 @@ public function hydrate(array $data){
         }
     }
 }
-
- 
-
 
     // GETTER & SETTER
 
